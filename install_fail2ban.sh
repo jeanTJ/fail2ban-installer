@@ -9,7 +9,7 @@ if [[ ! -z "$check" ]]; then
 else
 	echo "-----Installation de fail2ban en cours, veuillez patienter--------"
  	dnf update -y --quiet  #faire la mise a jour des depots standards
-  	dnf install epel-release #installer ou mettre a jour les depot EPEL
+  	dnf install epel-release -y --quiet #installer ou mettre a jour les depot EPEL
         echo -e "\nMise du systeme termine installation du service en cour..."
 	if sudo dnf install fail2ban fail2ban-firewalld -y --quiet; then   
 #Demarrer et activer fail2ban
@@ -44,7 +44,7 @@ maxretry = $max"
 		read -p "Entrer le maxretry ssh (ex: 5) : " maxr
 
 		ssh_config="[sshd]
-enable = true
+enabled = true
 bantime = $bant
 maxretry = $maxr"
 		echo "$ssh_config" > /etc/fail2ban/jail.d/sshd.local
