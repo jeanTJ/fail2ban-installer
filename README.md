@@ -8,7 +8,7 @@ Fonctionnalités
 - Lecture interactive des paramètres `bantime`, `findtime`, `maxretry`
 - Activation du service `fail2ban` au démarrage
 
- Utilisation
+
 
 Jean Kamogne — LinkedIn
 GitHub : jeanTJ
